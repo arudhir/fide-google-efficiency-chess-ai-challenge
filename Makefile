@@ -23,7 +23,6 @@ help:
 	@echo
 	@echo "Testing:"
 	@echo "    test               run basic tests"
-	@echo "    profile            run memory profiling"
 	@echo
 	@echo "Submission:"
 	@echo "    submit             create and submit to Kaggle"
@@ -45,10 +44,7 @@ venv:
 	pip install -r requirements.txt
 
 test:
-	uv run pytest tests/test_benchmarks.py
-
-profile:
-	uv run python -m memory_profiler submission/stockfish_evaluator.py
+	uv run pytest tests
 
 # --- Cleanup ---
 clean: clean-build clean-pyc

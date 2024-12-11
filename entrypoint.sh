@@ -3,4 +3,4 @@
 ulimit -v 5242880
 
 # Execute the main Python script and redirect output to a log file
-exec uv run python -m memory_profiler submissions/main.py
+exec uv run python -m memory_profiler submission/submission.py

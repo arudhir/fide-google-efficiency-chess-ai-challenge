@@ -4,6 +4,8 @@ FROM python:3.11-slim
 # Install uv
 RUN pip install uv
 
+RUN apt-get update && apt-get install -y stockfish
+
 # Set environment variable to disable output buffering
 ENV PYTHONUNBUFFERED=1
 
@@ -17,4 +19,4 @@ COPY . /app
 RUN uv sync
 
 # Set entrypoint to a script that enforces ulimit constraints
-ENTRYPOINT ["bash", "/app/entrypoint.sh"]
+ENTRYPOINT ["uv", "run", "python", "/app/submission/stockfish_evaluator.py"]

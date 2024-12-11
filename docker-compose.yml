@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  chess-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+      # Enforce competition memory limit
+      - MEMORY_LIMIT=5242880  # 5 MiB in bytes
+    # Competition specs: single 2.20GHz core
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 5M
+    command: tail -f /dev/null  # Keep container running
+
+  stockfish:
+    image: official-stockfish/stockfish:latest
+    command: stockfish
+    # Optional: if you want to access Stockfish directly for testing
+    ports:
+      - "8080:8080"

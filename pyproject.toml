@@ -7,7 +7,22 @@ requires-python = ">=3.11"
 dependencies = [
     "chessnut>=0.4.1",
     "ipython>=8.30.0",
+    "kaggle>=1.6.17",
     "memory-profiler>=0.61.0",
     "psutil>=6.1.0",
     "python-chess>=1.999",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "submission"]
+testpaths = ["tests"]
+addopts = "-v"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
 ]

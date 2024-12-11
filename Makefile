@@ -44,7 +44,7 @@ venv:
 	pip install -r requirements.txt
 
 test:
-	uv run pytest tests
+	uv run pytest tests -v -s
 
 # --- Cleanup ---
 clean: clean-build clean-pyc

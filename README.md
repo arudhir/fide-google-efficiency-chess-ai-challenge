@@ -1,56 +1,151 @@
 # fide-google-efficiency-chess-ai-challenge
 
-Run in resource-constrained environment
-```bash
-$ docker build -t chess-agent .
-$ docker run --rm --cpus=1 chess_agent
-
-Filename: submissions/main.py
-
-Line #    Mem usage    Increment  Occurrences   Line Contents
-=============================================================
-     6     60.6 MiB     60.6 MiB           1   @profile
-     7                                         def chess_bot(fen):
-     8                                             """
-     9                                             Improved chess bot that prioritizes:
-    10                                             1. Checkmate
-    11                                             2. Captures
-    12                                             3. Queen promotion
-    13                                             4. Piece Safety
-    14                                             5. Random move if no other criteria are met.
-    15                                         
-    16                                             Args:
-    17                                                 fen: A string representing the current board state in FEN format.
-    18                                         
-    19                                             Returns:
-    20                                                 A string representing the chosen move in UCI notation (e.g., "e2e4").
-    21                                             """
-    22     60.6 MiB      0.0 MiB           1       board = chess.Board(fen)
-    23                                         
-    24                                             # 1. Check for Checkmate (Highest Priority)
-    25     60.6 MiB      0.0 MiB           1       checkmate_move = get_checkmate_move(board)
-    26     60.6 MiB      0.0 MiB           1       if checkmate_move:
-    27                                                 return checkmate_move
-    28                                         
-    29                                             # 2. Capture opponent pieces
-    30     60.6 MiB      0.0 MiB           1       capture_move = get_capture_move(board)
-    31     60.6 MiB      0.0 MiB           1       if capture_move:
-    32                                                 return capture_move
-    33                                         
-    34                                             # 3. Queen promotion
-    35     60.6 MiB      0.0 MiB           1       queen_promotion_move = get_queen_promotion_move(board)
-    36     60.6 MiB      0.0 MiB           1       if queen_promotion_move:
-    37                                                 return queen_promotion_move
-    38                                         
-    39                                             # 4. Piece Safety
-    40     60.6 MiB      0.0 MiB           1       safe_move = get_safe_move(board)
-    41     60.6 MiB      0.0 MiB           1       if safe_move:
-    42     60.6 MiB      0.0 MiB           1           return safe_move
-    43                                         
-    44                                             # 5. Random move if no other criteria met
-    45                                             return random.choice(list(board.legal_moves)).uci()
-
-
-Chosen move: d2d4
+Evaluate against a random player and Stockfish 1200
 ```
+$ make test
 
+uv run pytest tests -v -s
+=================================== test session starts ====================================
+platform darwin -- Python 3.11.9, pytest-8.3.4, pluggy-1.5.0 -- /Users/aru/Development/fide-google-efficiency-chess-ai-challenge/.venv/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/aru/Development/fide-google-efficiency-chess-ai-challenge
+configfile: pyproject.toml
+collected 2 items                                                                          
+
+tests/test_benchmarks.py::test_basic_bot 
+==================================================
+Testing basic bot
+==================================================
+
+📊 Random Player Games:
+
+Game 1 - Bot playing as White
+Result: draw in 200 moves (other)
+
+Game 2 - Bot playing as Black
+Result: bot in 82 moves (checkmate)
+
+Game 3 - Bot playing as White
+Result: bot in 103 moves (checkmate)
+
+Game 4 - Bot playing as Black
+Result: draw in 54 moves (other)
+
+Game 5 - Bot playing as White
+Result: bot in 91 moves (checkmate)
+
+Game 6 - Bot playing as Black
+Result: bot in 22 moves (checkmate)
+
+Game 7 - Bot playing as White
+Result: bot in 45 moves (checkmate)
+
+Game 8 - Bot playing as Black
+Result: draw in 200 moves (other)
+
+Game 9 - Bot playing as White
+Result: bot in 79 moves (checkmate)
+
+Game 10 - Bot playing as Black
+Result: bot in 90 moves (checkmate)
+
+Random Games Summary:
+Wins: 7/10 (70.0%)
+Draws: 3/10 (30.0%)
+
+🤖 Stockfish Games (ELO 1200):
+
+Game 1 - Bot playing as White
+Result: opponent in 44 moves (checkmate)
+
+Game 2 - Bot playing as Black
+Result: opponent in 27 moves (checkmate)
+
+Game 3 - Bot playing as White
+Result: opponent in 12 moves (checkmate)
+
+Game 4 - Bot playing as Black
+Result: opponent in 31 moves (checkmate)
+
+Game 5 - Bot playing as White
+Result: opponent in 36 moves (checkmate)
+
+Stockfish Games Summary:
+Wins: 0/5 (0.0%)
+Draws: 0/5 (0.0%)
+
+⚡ Performance Metrics:
+Memory Usage: 0.02 MB
+Average Move Time: 18.1 ms
+
+Results saved to: test_results/test_session_basic_20241211_175723.json
+PASSED
+tests/test_benchmarks.py::test_hybrid_bot 
+==================================================
+Testing hybrid bot
+==================================================
+
+📊 Random Player Games:
+
+Game 1 - Bot playing as White
+Result: opponent in 70 moves (checkmate)
+
+Game 2 - Bot playing as Black
+Result: bot in 128 moves (checkmate)
+
+Game 3 - Bot playing as White
+Result: bot in 163 moves (checkmate)
+
+Game 4 - Bot playing as Black
+Result: draw in 136 moves (other)
+
+Game 5 - Bot playing as White
+Result: draw in 200 moves (other)
+
+Game 6 - Bot playing as Black
+Result: bot in 154 moves (checkmate)
+
+Game 7 - Bot playing as White
+Result: opponent in 104 moves (checkmate)
+
+Game 8 - Bot playing as Black
+Result: draw in 126 moves (other)
+
+Game 9 - Bot playing as White
+Result: draw in 200 moves (other)
+
+Game 10 - Bot playing as Black
+Result: draw in 200 moves (other)
+
+Random Games Summary:
+Wins: 3/10 (30.0%)
+Draws: 5/10 (50.0%)
+
+🤖 Stockfish Games (ELO 1200):
+
+Game 1 - Bot playing as White
+Result: opponent in 10 moves (checkmate)
+
+Game 2 - Bot playing as Black
+Result: opponent in 25 moves (checkmate)
+
+Game 3 - Bot playing as White
+Result: opponent in 32 moves (checkmate)
+
+Game 4 - Bot playing as Black
+Result: opponent in 47 moves (checkmate)
+
+Game 5 - Bot playing as White
+Result: opponent in 30 moves (checkmate)
+
+Stockfish Games Summary:
+Wins: 0/5 (0.0%)
+Draws: 0/5 (0.0%)
+
+⚡ Performance Metrics:
+Memory Usage: 0.00 MB
+Average Move Time: 24.4 ms
+
+Results saved to: test_results/test_session_hybrid_20241211_175740.json
+PASSED
+```

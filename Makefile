@@ -51,7 +51,7 @@ profile:
 	uv run python -m memory_profiler submission/stockfish_evaluator.py
 
 # --- Cleanup ---
-clean: clean-build clean-pyc down
+clean: clean-build clean-pyc
 
 clean-build:
 	rm -fr build/

@@ -13,11 +13,21 @@ def sample_positions():
         "8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1"  # Endgame position
     ]
 
+# tests/conftest.py
+import pytest
+import chess.engine
+
 @pytest.fixture
-def stockfish_engine():
-    """Create and yield a Stockfish engine instance"""
-    transport = chess.engine.SimpleEngine.popen_uci("stockfish")
+def stockfish():
+    engine = chess.engine.SimpleEngine.popen_uci("stockfish")
     try:
-        yield transport
+        yield engine
     finally:
-        transport.quit()
+        engine.quit()
+
+@pytest.fixture
+def test_positions():
+    return [
+        chess.STARTING_FEN,
+        # Add more test positions
+    ]

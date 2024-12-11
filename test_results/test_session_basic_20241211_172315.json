@@ -1,0 +1,115 @@
+{
+  "bot_name": "basic",
+  "timestamp": "20241211_172315",
+  "random_results": [
+    {
+      "winner": "draw",
+      "moves": 89,
+      "time_taken": 0.5924949645996094,
+      "ending": "other",
+      "final_fen": "7k/8/6Q1/1N2P2P/P4B2/3PK2N/1B3P1P/1R3B1R b - - 10 45"
+    },
+    {
+      "winner": "draw",
+      "moves": 106,
+      "time_taken": 0.7532639503479004,
+      "ending": "other",
+      "final_fen": "3b1r2/pp1n2q1/k3p3/7p/4r3/7K/4q3/8 w - - 18 54"
+    },
+    {
+      "winner": "bot",
+      "moves": 65,
+      "time_taken": 0.6051890850067139,
+      "ending": "checkmate",
+      "final_fen": "8/3Q4/2k1P3/P5P1/3P1P2/7N/1PP2K1P/2B2NR1 b - - 2 33"
+    },
+    {
+      "winner": "draw",
+      "moves": 136,
+      "time_taken": 0.7730569839477539,
+      "ending": "other",
+      "final_fen": "5kr1/2p4p/4p1bn/p4p2/2nr4/1q6/8/K7 w - - 52 69"
+    },
+    {
+      "winner": "bot",
+      "moves": 61,
+      "time_taken": 0.503493070602417,
+      "ending": "checkmate",
+      "final_fen": "8/kQ6/8/N3N3/2P5/1P3P2/3PP1PP/2B1KBR1 b - - 14 31"
+    },
+    {
+      "winner": "bot",
+      "moves": 46,
+      "time_taken": 0.5142300128936768,
+      "ending": "checkmate",
+      "final_fen": "r1b2b2/p5pr/5nk1/3pp2p/3ppKnP/6PN/1R2B3/8 w - - 0 24"
+    },
+    {
+      "winner": "draw",
+      "moves": 49,
+      "time_taken": 0.5127370357513428,
+      "ending": "other",
+      "final_fen": "2B4k/5Q2/8/B3P3/4PP2/2P5/P5PP/RN3KNR b - - 0 25"
+    },
+    {
+      "winner": "draw",
+      "moves": 200,
+      "time_taken": 1.1508820056915283,
+      "ending": "other",
+      "final_fen": "4b3/2k5/8/p4p1p/8/pK6/2r5/8 w - - 3 101"
+    },
+    {
+      "winner": "bot",
+      "moves": 89,
+      "time_taken": 0.6889710426330566,
+      "ending": "checkmate",
+      "final_fen": "R7/8/k3P3/2P4B/6P1/K3P3/P3NP2/1R6 b - - 6 45"
+    },
+    {
+      "winner": "draw",
+      "moves": 200,
+      "time_taken": 1.196491003036499,
+      "ending": "other",
+      "final_fen": "3K4/7k/p6q/1p1p2p1/1b1n2p1/7r/8/8 w - - 2 101"
+    }
+  ],
+  "stockfish_results": [
+    {
+      "winner": "opponent",
+      "moves": 34,
+      "time_taken": 1.7359588146209717,
+      "ending": "checkmate",
+      "final_fen": "r3k3/2p2p1p/n4P2/6r1/p1P5/P4q1b/3P3P/1NB4K w q - 0 18"
+    },
+    {
+      "winner": "opponent",
+      "moves": 29,
+      "time_taken": 1.8586697578430176,
+      "ending": "checkmate",
+      "final_fen": "rnb1k1Nr/pp2Q1pp/8/8/8/8/PPP2PPP/3RKB1R b K - 0 15"
+    },
+    {
+      "winner": "opponent",
+      "moves": 6,
+      "time_taken": 0.3423800468444824,
+      "ending": "checkmate",
+      "final_fen": "rnb1kbnr/pppp1ppp/8/4p3/8/5PqP/PPPPP3/RNBQKBNR w KQkq - 0 4"
+    },
+    {
+      "winner": "opponent",
+      "moves": 13,
+      "time_taken": 0.8279800415039062,
+      "ending": "checkmate",
+      "final_fen": "rnbqkb2/ppppp1p1/5pQ1/7p/3P3N/4n3/PPP2PPP/RN2KB1R b KQq - 1 7"
+    },
+    {
+      "winner": "opponent",
+      "moves": 58,
+      "time_taken": 2.8733789920806885,
+      "ending": "checkmate",
+      "final_fen": "2k4r/5ppp/2p5/pn6/P3b3/6P1/3q1K2/7r w - - 1 30"
+    }
+  ],
+  "memory_usage": 0.0,
+  "avg_move_time": 0.021212315559387206
+}

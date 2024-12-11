@@ -16,7 +16,7 @@ WORKDIR /app
 COPY . /app
 
 # Sync dependencies using uv
-RUN uv sync
+# RUN uv sync
 
 # Set entrypoint to a script that enforces ulimit constraints
 ENTRYPOINT ["uv", "run", "python", "/app/submission/stockfish_evaluator.py"]
